@@ -15,18 +15,19 @@ public struct RxTimelane {
 
 fileprivate let lock = NSLock()
 
-/// The `lane` operator logs the subscription and its events to the Timelane Instrument.
-///
-///  - Note: You can download the Timelane Instrument from http://timelane.tools
-/// - Parameters:
-///   - name: A name for the lane when visualized in Instruments
-///   - filter: Which events to log subscriptions or data events.
-///             For example for a subscription on a subject you might be interested only in data events.
-///   - transformValue: An optional closure to format the subscription values for displaying in Instruments.
-///                     You can not only prettify the values but also change them completely, e.g. for arrays you can
-///                     it might be more useful to report the count of elements if there are a lot of them.
-///   - value: The value emitted by the subscription
 public extension ObservableType {
+    /// The `lane` operator logs the subscription and its events to the Timelane Instrument.
+    ///
+    ///  - Note: You can download the Timelane Instrument from http://timelane.tools
+    /// - Parameters:
+    ///   - name: A name for the lane when visualized in Instruments
+    ///   - filter: Which events to log subscriptions or data events.
+    ///             For example for a subscription on a subject you might be interested only in data events.
+    ///   - transformValue: An optional closure to format the subscription values for displaying in Instruments.
+    ///                     You can not only prettify the values but also change them completely, e.g. for arrays you can
+    ///                     it might be more useful to report the count of elements if there are a lot of them.
+    ///   - value: The value emitted by the subscription
+    @available(macOS 10.14, iOS 12, tvOS 12, watchOS 5, *)
     func lane(_ name: String,
               filter: Set<RxTimelane.LaneType> = Set(RxTimelane.LaneType.allCases),
               file: StaticString = #file,

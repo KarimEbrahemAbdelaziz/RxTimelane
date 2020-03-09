@@ -15,11 +15,13 @@ The RxSwift logging package for the Timelane Instrument.
 
   s.swift_versions = ['5.0']
   s.requires_arc          = true
-  s.ios.deployment_target = '8.0'
-  s.osx.deployment_target = '10.10'
-  s.watchos.deployment_target = '3.0'
-  s.tvos.deployment_target = '9.0'
+  s.ios.deployment_target = '12.0'
+  s.osx.deployment_target = '10.14'
+  s.watchos.deployment_target = '5.0'
+  s.tvos.deployment_target = '12.0'
   
   s.source_files = 'Sources/**/*.swift'  
   s.frameworks = 'Foundation'
+  s.dependency 'TimelaneCore', '~> 1.0.2'
+  s.dependency 'RxSwift', '~> 5.1'
 end
